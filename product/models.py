@@ -22,6 +22,11 @@ class Product(models.Model):
         verbose_name='Дата выхода продукта на рынок',
         help_text='Date of release'
     )
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Дата создания продукта',
+        help_text='Date of release'
+    )
 
     def __str__(self):
         return f'{self.name}'
