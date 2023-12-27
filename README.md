@@ -1,0 +1,2 @@
+# online_platform_for_electronics_trading_network
+онлайн платформу торговой сети электроники
