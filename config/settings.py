@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     # DjangoRESTFramework
     'rest_framework',
+    'django_filters',
 
     # Документация
     'drf_yasg',
@@ -150,3 +151,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'users.User'
