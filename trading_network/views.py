@@ -1,6 +1,6 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics
-from rest_framework.filters import OrderingFilter
+from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework.permissions import IsAuthenticated
 
 from trading_network.models import TradingNetwork, Organization
@@ -18,8 +18,9 @@ class TradingNetworkListAPIView(generics.ListAPIView):
     queryset = TradingNetwork.objects.all()
     serializer_class = TradingNetworkSerializer
     pagination_class = TradingNetworkPaginator
-    filter_backends = [DjangoFilterBackend, OrderingFilter]
-    filter_set_fields = ('contacts__city',)
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ('contacts__city',)
+    search_fields = ('contacts__city', 'contacts__name',)
     ordering_fields = ('contacts__name',)
     permission_classes = [IsAuthenticated, IsActive | IsSuperuser]
 
