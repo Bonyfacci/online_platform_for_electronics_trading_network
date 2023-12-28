@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.viewsets import ModelViewSet
 
-# Create your views here.
+from product.models import Product
+from product.serializers import ProductSerializer
+from users.permissions import IsActive, IsSuperuser
+
+
+class ProductViewSet(ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    permission_classes = [IsAuthenticated, IsActive | IsSuperuser]
