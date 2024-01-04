@@ -6,7 +6,7 @@ NULLABLE = {'null': True, 'blank': True}
 
 class Product(models.Model):
     """
-    Продукт
+    Модель Продукт (Название, Модель, Дата выхода продукта на рынок)
     """
     name = models.CharField(
         max_length=150,
