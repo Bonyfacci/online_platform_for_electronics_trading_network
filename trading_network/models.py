@@ -58,7 +58,7 @@ class TradingNetwork(models.Model):
     supplier = models.ForeignKey(
         'self',
         on_delete=models.SET_NULL,
-        null=True,
+        **NULLABLE,
         verbose_name='Поставщик',
         related_name='product_supplier'
     )
