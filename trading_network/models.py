@@ -14,11 +14,11 @@ class Organization(models.Model):
         verbose_name='Email-адрес',
         help_text='example@mail.com, 150 characters or fewer. Letters, digits and @/./+/-/_ only.'
     )
-    postcode = models.PositiveIntegerField(verbose_name='Почтовый индекс', help_text='Postcode, Example:08860')
-    country = models.CharField(max_length=50, verbose_name='Страна', help_text='County, Example:Spain')
-    city = models.CharField(max_length=50, verbose_name='Город', help_text='City, Example:Barcelona')
-    street = models.CharField(max_length=100, verbose_name='Улица', help_text='Street, Example:Passeig Maritim')
-    house = models.CharField(max_length=10, verbose_name='Дом', help_text='House, Example:11')
+    postcode = models.PositiveIntegerField(verbose_name='Почтовый индекс', help_text='Postcode, Example: 08860')
+    country = models.CharField(max_length=50, verbose_name='Страна', help_text='County, Example: Spain')
+    city = models.CharField(max_length=50, verbose_name='Город', help_text='City, Example: Barcelona')
+    street = models.CharField(max_length=100, verbose_name='Улица', help_text='Street, Example: Passeig Maritim')
+    house = models.CharField(max_length=10, verbose_name='Дом', help_text='House, Example: 11')
 
     def __str__(self):
         return self.name
@@ -58,7 +58,7 @@ class TradingNetwork(models.Model):
     supplier = models.ForeignKey(
         'self',
         on_delete=models.SET_NULL,
-        null=True,
+        **NULLABLE,
         verbose_name='Поставщик',
         related_name='product_supplier'
     )

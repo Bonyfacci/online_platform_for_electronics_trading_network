@@ -4,6 +4,9 @@ from users.models import User
 
 
 class UserCreateSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор Пользователя для представления полей при реализации create
+    """
 
     class Meta:
         model = User
@@ -18,6 +21,9 @@ class UserCreateSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор Пользователя для представления полей
+    """
 
     class Meta:
         model = User

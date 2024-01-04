@@ -2,6 +2,9 @@ from rest_framework.permissions import BasePermission
 
 
 class IsOwner(BasePermission):
+    """
+    Разрешение на использование объекта
+    """
     message = 'Вы не являетесь владельцем!'
 
     def has_object_permission(self, request, view, obj):
@@ -11,6 +14,9 @@ class IsOwner(BasePermission):
 
 
 class IsActive(BasePermission):
+    """
+    Разрешение на доступ к платформе
+    """
     message = 'У Вас нет доступа, обратитесь к администратору!'
 
     def has_permission(self, request, view):
@@ -20,6 +26,9 @@ class IsActive(BasePermission):
 
 
 class IsSuperuser(BasePermission):
+    """
+    Разрешение на права администратора
+    """
     message = 'Вы не являетесь администратором!'
 
     def has_permission(self, request, view):
