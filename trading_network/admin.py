@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.utils.html import format_html
 
 from trading_network.models import Organization, TradingNetwork
+from trading_network.validators import trading_network_validator
 
 
 @admin.action(description="Очистка задолженности")
@@ -25,7 +26,7 @@ class OrganizationsListAdmin(admin.ModelAdmin):
         'street',
         'house'
     )
-    list_filter = ('name',)
+    list_filter = ('country', 'city',)
     search_fields = ('name', 'email', 'country', 'city',)
 
 
@@ -38,7 +39,7 @@ class TradingNetworkListAdmin(admin.ModelAdmin):
         'supplier',
         'debit',
     )
-    list_filter = ('organization_type', 'contacts__name', 'contacts__country', 'contacts__city',)
+    list_filter = ('organization_type', 'contacts__country', 'contacts__city',)
     search_fields = ('contacts__name', 'contacts__country', 'supplier',)
 
     actions = [clear_debit]
@@ -53,3 +54,9 @@ class TradingNetworkListAdmin(admin.ModelAdmin):
         return 'Завод не поставляет'
 
     supplier.short_description = 'Поставщик'
+
+    def save_form(self, request, form, change):
+        validators = [trading_network_validator]
+        for item in validators:
+            item(form.cleaned_data)
+        return form.save(commit=False)

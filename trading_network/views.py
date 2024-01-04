@@ -13,7 +13,7 @@ from users.permissions import IsActive, IsSuperuser
 
 class TradingNetworkListAPIView(generics.ListAPIView):
     """
-
+    Представление для получения списка торговых сетей
     """
     queryset = TradingNetwork.objects.all()
     serializer_class = TradingNetworkSerializer
@@ -27,7 +27,7 @@ class TradingNetworkListAPIView(generics.ListAPIView):
 
 class TradingNetworkCreateAPIView(generics.CreateAPIView):
     """
-
+    Представление для создания торговой сети
     """
     queryset = TradingNetwork.objects.all()
     serializer_class = TradingNetworkSerializer
@@ -36,7 +36,7 @@ class TradingNetworkCreateAPIView(generics.CreateAPIView):
 
 class TradingNetworkDetailAPIView(generics.RetrieveAPIView):
     """
-
+    Представление для получения экземпляра торговой сети
     """
     queryset = TradingNetwork.objects.all()
     serializer_class = TradingNetworkSerializer
@@ -45,7 +45,7 @@ class TradingNetworkDetailAPIView(generics.RetrieveAPIView):
 
 class TradingNetworkUpdateAPIView(generics.UpdateAPIView):
     """
-
+    Представление для обновления торговой сети
     """
     queryset = TradingNetwork.objects.all()
     serializer_class = TradingNetworkSerializer
@@ -54,7 +54,7 @@ class TradingNetworkUpdateAPIView(generics.UpdateAPIView):
 
 class TradingNetworkDeleteAPIView(generics.DestroyAPIView):
     """
-
+    Представление для удаления торговой сети
     """
     queryset = TradingNetwork.objects.all()
     serializer_class = TradingNetworkSerializer
@@ -65,7 +65,7 @@ class TradingNetworkDeleteAPIView(generics.DestroyAPIView):
 
 class OrganizationListAPIView(generics.ListAPIView):
     """
-
+    Представление для получения списка организаций
     """
     queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
@@ -75,7 +75,7 @@ class OrganizationListAPIView(generics.ListAPIView):
 
 class OrganizationCreateAPIView(generics.CreateAPIView):
     """
-
+    Представление для создания организации
     """
     queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
@@ -84,7 +84,7 @@ class OrganizationCreateAPIView(generics.CreateAPIView):
 
 class OrganizationDetailAPIView(generics.RetrieveAPIView):
     """
-
+    Представление для получения экземпляра организации
     """
     queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
@@ -93,7 +93,7 @@ class OrganizationDetailAPIView(generics.RetrieveAPIView):
 
 class OrganizationUpdateAPIView(generics.UpdateAPIView):
     """
-
+    Представление для обновления организации
     """
     queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
@@ -102,7 +102,7 @@ class OrganizationUpdateAPIView(generics.UpdateAPIView):
 
 class OrganizationDeleteAPIView(generics.DestroyAPIView):
     """
-
+    Представление для удаления организации
     """
     queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
