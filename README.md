@@ -18,7 +18,7 @@
 
 [//]: # ( - ![alt text]&#40;https://img.shields.io/badge/REST_Framework-3.14.0-%23092E20?style=plastic&logo=django&logoColor=%23092E20&labelColor=slategrey&#41;)
 
-[//]: # ( - ![alt text]&#40;https://img.shields.io/badge/PostgreSQL-16.0-%234169E1?style=plastic&logo=postgresql&logoColor=deepskyblue&labelColor=grey&#41;)
+[//]: # ( - ![alt text]&#40;https://img.shields.io/badge/PostgreSQL-15.3-%234169E1?style=plastic&logo=postgresql&logoColor=deepskyblue&labelColor=grey&#41;)
 
 ### Описание проекта
 Реализована модель сети по продаже электроники.  
