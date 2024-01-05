@@ -23,7 +23,7 @@ class TradingNetworkListAPIView(generics.ListAPIView):
     filterset_fields = ('contacts__city',)
     search_fields = ('contacts__city', 'contacts__name',)
     ordering_fields = ('contacts__name',)
-    # permission_classes = [IsAuthenticated, IsActive | IsSuperuser]
+    permission_classes = [IsAuthenticated, IsActive | IsSuperuser]
 
     template_name = 'trading_network/trading_network_list.html'
 
@@ -78,7 +78,7 @@ class OrganizationListAPIView(generics.ListAPIView):
     queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
     pagination_class = OrganizationPaginator
-    # permission_classes = [IsAuthenticated, IsActive | IsSuperuser]
+    permission_classes = [IsAuthenticated, IsActive | IsSuperuser]
 
     template_name = 'trading_network/organization_list.html'
 
