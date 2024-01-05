@@ -1,0 +1,43 @@
+<div class="col-3">
+    <div class="card mb-4 box-shadow">
+        <div class="card-header" style="height:75px">
+            <h4 class="my-0 font-weight-normal">{{ object.get_organization_type_display }}</h4>
+        </div>
+        <div class="card-body">
+            <p>
+                Тип организации
+            </p>
+            <p>
+                {{ object.organization_type }}
+            </p>
+                <hr/>
+            <p>
+                Данные организации:
+            </p>
+            <ul>
+                <li>
+                    {{ object.contacts }}, {{ object.contacts.name }}, {{ object.contact.city }}
+                </li>
+                <li>{{ object.contact.street }} {{ object.contact.house }}</li>
+            </ul>
+            <p>
+                Продукты:
+            </p>
+            <ul>
+                {% for product in object.products.all %}
+                <li>
+                    {{ product.name }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="card-footer">
+            <p>
+                Поставщик / Задолженность перед поставщиком
+            </p>
+            <p>
+                {{ object.get_supplier_name }} / {{ object.debit }}
+            </p>
+        </div>
+    </div>
+</div>
