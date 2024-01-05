@@ -7,6 +7,10 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}"/>
+
+    <link href="{% static '/app_home/css/style.css' %}" rel="stylesheet">
+    <link href="{% static '/app_home/css/bootstrap.min.css' %}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -27,5 +31,7 @@
     {% block blog %}
 
     {% endblock %}
+
+    {% include 'app_home/layouts/layout_footer.html' %}
 
 </body>

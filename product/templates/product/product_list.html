@@ -1,0 +1,15 @@
+{% extends 'app_home/layouts/layout_base.html' %}
+
+{% block title %}Продукты{% endblock %}
+
+{% block content %}
+
+<div class="container p-5">
+    <div class="row text-center">
+        {% for object in object_list %}
+            {% include 'product/layouts/layout_card_product.html' %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

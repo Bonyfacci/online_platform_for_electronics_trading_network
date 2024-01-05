@@ -1,0 +1,30 @@
+<div class="col-3">
+    <div class="card mb-4 box-shadow">
+        <div class="card-header" style="height:75px">
+            <h4 class="my-0 font-weight-normal">{{ object.name }}</h4>
+        </div>
+        <div class="card-body">
+            <p>
+                Наименование товара
+            </p>
+            <p>
+                {{ object.name }}
+            </p>
+                <hr/>
+            <p>
+                Модель продукта
+            </p>
+            <p>
+                {{ object.model }}
+            </p>
+        </div>
+        <div class="card-footer">
+            <p>
+                Дата выхода продукта на рынок
+            </p>
+            <p>
+                {{ object.date_of_release }}
+            </p>
+        </div>
+    </div>
+</div>
