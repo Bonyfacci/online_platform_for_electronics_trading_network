@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics
 from rest_framework.filters import OrderingFilter, SearchFilter
@@ -22,7 +23,14 @@ class TradingNetworkListAPIView(generics.ListAPIView):
     filterset_fields = ('contacts__city',)
     search_fields = ('contacts__city', 'contacts__name',)
     ordering_fields = ('contacts__name',)
-    permission_classes = [IsAuthenticated, IsActive | IsSuperuser]
+    # permission_classes = [IsAuthenticated, IsActive | IsSuperuser]
+
+    template_name = 'trading_network/trading_network_list.html'
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+        serializer = self.get_serializer(queryset, many=True)
+        return render(request, self.template_name, {'object_list': serializer.data})
 
 
 class TradingNetworkCreateAPIView(generics.CreateAPIView):
@@ -70,7 +78,14 @@ class OrganizationListAPIView(generics.ListAPIView):
     queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
     pagination_class = OrganizationPaginator
-    permission_classes = [IsAuthenticated, IsActive | IsSuperuser]
+    # permission_classes = [IsAuthenticated, IsActive | IsSuperuser]
+
+    template_name = 'trading_network/organization_list.html'
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+        serializer = self.get_serializer(queryset, many=True)
+        return render(request, self.template_name, {'object_list': serializer.data})
 
 
 class OrganizationCreateAPIView(generics.CreateAPIView):

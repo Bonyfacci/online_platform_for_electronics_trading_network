@@ -1,0 +1,15 @@
+{% extends 'app_home/layouts/layout_base.html' %}
+
+{% block title %}Организации{% endblock %}
+
+{% block content %}
+
+<div class="container p-5">
+    <div class="row text-center">
+        {% for object in object_list %}
+            {% include 'trading_network/layouts/layout_card_organization.html' %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

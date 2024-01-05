@@ -1,0 +1,31 @@
+<div class="col-3">
+    <div class="card mb-4 box-shadow">
+        <div class="card-header" style="height:75px">
+            <h4 class="my-0 font-weight-normal">{{ object.name }}</h4>
+        </div>
+        <div class="card-body">
+            <p>
+                Наименование организации
+            </p>
+            <p>
+                {{ object.name }}
+            </p>
+                <hr/>
+            <p>
+                Данные организации:
+            </p>
+            <ul>
+                <li>{{ object.postcode }}, {{ object.country }}, {{ object.city }}</li>
+                <li>{{ object.street }} {{ object.house }}</li>
+            </ul>
+        </div>
+        <div class="card-footer">
+            <p>
+                Данные для связи
+            </p>
+            <p>
+                {{ object.email }}
+            </p>
+        </div>
+    </div>
+</div>
