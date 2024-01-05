@@ -8,7 +8,7 @@
 
  - ![alt text](https://img.shields.io/badge/REST_Framework-3.14.0-grey?style=plastic&logo=django&logoColor=white&labelColor=%23092E20)
 
- - ![alt text](https://img.shields.io/badge/PostgreSQL-16.0-grey?style=plastic&logo=postgresql&logoColor=white&labelColor=%234169E1)
+ - ![alt text](https://img.shields.io/badge/PostgreSQL-15.3-grey?style=plastic&logo=postgresql&logoColor=white&labelColor=%234169E1)
 
 
 
